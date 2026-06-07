@@ -1,0 +1,102 @@
+const destinations = [
+    {
+      id: 1,
+      slug: "dubai-uae",
+      name: "Dubai, UAE",
+      country: "United Arab Emirates",
+      category: "City",
+      estimatedCost: "$3,000",
+      bestSeason: "Winter (November - March)",
+      description: "Dubai is a dazzling ultramodern city rising from the Arabian Desert, known for its record-breaking skyscrapers, luxurious shopping malls, and vibrant nightlife. From the world's tallest building to man-made islands, Dubai constantly pushes the boundaries of what's possible.",
+      mustDos: "Visit the Burj Khalifa, explore the Dubai Mall, take an abra ride in Dubai Creek, go dune bashing in the desert, visit the Palm Jumeirah",
+      localFood: "Try shawarma, Al Harees (slow-cooked wheat and meat), fresh camel milk, luqaimat (sweet dumplings), and a traditional Emirati breakfast",
+      travelTip: "Visit between November and March to avoid extreme heat. Download the RTA app for easy metro and bus navigation around the city.",
+      image: "https://images.unsplash.com/photo-1546412414-e1885259563a?w=1600&auto=format&fit=crop&q=60"
+    },
+    {
+      id: 2,
+      slug: "doha-qatar",
+      name: "Doha, Qatar",
+      country: "Qatar",
+      category: "City",
+      estimatedCost: "$2,500",
+      bestSeason: "Winter (October - April)",
+      description: "Doha is a rapidly rising gem on the Arabian Gulf, blending a rich Bedouin heritage with futuristic architecture and world-class museums. The city's stunning corniche, vibrant souq, and extraordinary Museum of Islamic Art make it one of the Middle East's most compelling destinations.",
+      mustDos: "Explore Souq Waqif, visit the Museum of Islamic Art, stroll the Corniche, explore the futuristic Msheireb Downtown, visit Katara Cultural Village",
+      localFood: "Try machboos (spiced rice with meat), harees, balaleet (sweet vermicelli), fresh seafood, and traditional karak chai",
+      travelTip: "Dress modestly when visiting souqs and cultural sites. The Doha Metro is modern, cheap, and connects all major attractions.",
+      image: "https://images.unsplash.com/photo-1669300884869-e6e11c67c031?q=80&w=1470&auto=format&fit=crop"
+    },
+    {
+      id: 3,
+      slug: "istanbul-turkey",
+      name: "Istanbul, Turkey",
+      country: "Turkey",
+      category: "Cultural",
+      estimatedCost: "$1,500",
+      bestSeason: "Spring (April - May) or Fall (September - November)",
+      description: "Istanbul is one of the world's greatest cities, uniquely straddling two continents — Europe and Asia. With a skyline punctuated by minarets and domes, a labyrinthine Grand Bazaar, and layers of Byzantine, Ottoman, and modern culture, Istanbul is endlessly fascinating and deeply atmospheric.",
+      mustDos: "Visit the Hagia Sophia and Blue Mosque, get lost in the Grand Bazaar, take a Bosphorus cruise, explore the Topkapi Palace, visit the Spice Bazaar",
+      localFood: "Try doner kebab, simit (sesame bread rings), baklava, meze platters, fresh fish sandwiches by the Galata Bridge, and Turkish tea",
+      travelTip: "Get an Istanbulkart for easy and cheap access to all public transport. Visit major mosques outside of prayer times for the best experience.",
+      image: "https://images.unsplash.com/photo-1527838832700-5059252407fa?q=80&w=1598&auto=format&fit=crop"
+    },
+    {
+      id: 4,
+      slug: "kuala-lumpur-malaysia",
+      name: "Kuala Lumpur, Malaysia",
+      country: "Malaysia",
+      category: "City",
+      estimatedCost: "$1,200",
+      bestSeason: "Summer (May - July)",
+      description: "Kuala Lumpur is a vibrant, multicultural capital where gleaming skyscrapers stand beside ornate Hindu temples and colonial-era buildings. The city is a melting pot of Malay, Chinese, and Indian cultures, offering incredible food, warm hospitality, and some of Southeast Asia's best shopping.",
+      mustDos: "Visit the Petronas Twin Towers, explore Batu Caves, wander through Chinatown (Petaling Street), visit the Islamic Arts Museum, take a day trip to Putrajaya",
+      localFood: "Try nasi lemak (coconut rice dish), roti canai, char kway teow, rendang, satay, and fresh tropical fruit juices everywhere",
+      travelTip: "KL is very affordable — street food is delicious and dirt cheap. Use Grab (Southeast Asia's Uber) for easy and affordable rides around the city.",
+      image: "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?q=80&w=1464&auto=format&fit=crop"
+    },
+    {
+      id: 5,
+      slug: "switzerland",
+      name: "Switzerland",
+      country: "Switzerland",
+      category: "Nature",
+      estimatedCost: "$4,000",
+      bestSeason: "Summer (June - August) or Winter (December - February)",
+      description: "Switzerland is a postcard-perfect country of snow-capped Alpine peaks, crystal-clear lakes, and charming medieval towns. Whether you're skiing world-famous slopes in winter, hiking breathtaking trails in summer, or simply riding panoramic trains through jaw-dropping mountain scenery, Switzerland never disappoints.",
+      mustDos: "Ride the Jungfraujoch train to the top of Europe, visit Interlaken, explore Lucerne's Chapel Bridge, take the Glacier Express, visit Zermatt and see the Matterhorn",
+      localFood: "Try cheese fondue, raclette, rösti (Swiss potato dish), Swiss chocolate, zürcher geschnetzeltes (veal dish), and fresh Alpine cheeses",
+      travelTip: "Buy a Swiss Travel Pass for unlimited train, bus, and boat travel — it pays for itself quickly. Book mountain excursions early as weather can cancel trips.",
+      image: "https://images.unsplash.com/photo-1530638458177-fcc275860f8b?q=80&w=1470&auto=format&fit=crop"
+    },
+    {
+      id: 6,
+      slug: "london-uk",
+      name: "London, UK",
+      country: "United Kingdom",
+      category: "City",
+      estimatedCost: "$3,500",
+      bestSeason: "Summer (June - August)",
+      description: "London is one of the world's greatest cities, a dynamic metropolis where centuries of history meet cutting-edge culture, fashion, and food. From the Tower of London to the Tate Modern, Buckingham Palace to Borough Market, London rewards every kind of traveler with endless things to see and do.",
+      mustDos: "Visit the British Museum, see Buckingham Palace, walk across Tower Bridge, explore Borough Market, ride the London Eye, catch a West End show",
+      localFood: "Try a traditional English breakfast, fish and chips, afternoon tea, pie and mash, chicken tikka masala, and a pint at a classic British pub",
+      travelTip: "Get an Oyster card for the Tube — it's the cheapest and fastest way to get around. Many of London's best museums are completely free to enter.",
+      image: "https://images.unsplash.com/photo-1486299267070-83823f5448dd?q=80&w=1471&auto=format&fit=crop"
+    },
+    {
+      id: 7,
+      slug: "banff-canada",
+      name: "Banff, Canada",
+      country: "Canada",
+      category: "Nature",
+      estimatedCost: "$1,500",
+      bestSeason: "Summer (June - August)",
+      description: "Banff National Park is Canada's oldest national park and one of the most breathtaking places on Earth. With turquoise glacial lakes, towering Rocky Mountain peaks, abundant wildlife, and charming alpine towns, it's a paradise for outdoor lovers and photographers alike.",
+      mustDos: "Visit Lake Louise and Moraine Lake, drive the Icefields Parkway, spot wildlife at dawn, soak in Banff Upper Hot Springs, hike Johnston Canyon",
+      localFood: "Try poutine, Alberta beef burgers, wild game dishes like elk or bison, fresh trout, and warm beaver tails pastry by the river",
+      travelTip: "Arrive at Moraine Lake parking lot before 6AM or take the shuttle — it fills up by 7AM in summer. Book lodging several months ahead.",
+      image: "https://images.unsplash.com/photo-1561134643-668f9057cce4?q=80&w=1548&auto=format&fit=crop"
+    }
+  ];
+  
+  module.exports = destinations;

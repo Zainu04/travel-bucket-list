@@ -36,7 +36,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented required features:
 
-<img src='images/Kapture 2026-06-07 at 00.22.32.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='images/Kapture 2026-06-07 at 00.28.04.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with Kap

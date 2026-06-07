@@ -1,0 +1,24 @@
+{
+  "name": "travel-bucket-list",
+  "version": "1.0.0",
+  "description": "Travel Bucket List Web App that provides users with a destination, estimated cost, best season, description and detailed page that includes must-dos, local food tips, and travel warnings.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zainu04/travel-bucket-list.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Zainu04/travel-bucket-list/issues"
+  },
+  "homepage": "https://github.com/Zainu04/travel-bucket-list#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}

@@ -39,7 +39,7 @@ GIF created with KAP
 
 ## Notes
 
-The main challenge encountered was restructuring the project from Part 1 into separate client and server folders, and connecting the Express server to a remote PostgreSQL database hosted on Render. Updating the frontend JavaScript to use snake_case field names returned by the database instead of the camelCase names from the original data file also required careful attention.
+The main challenge encountered was restructuring the project from Part 1 into separate client and server folders, and connecting the Express server to a remote PostgreSQL database hosted on Render.
 
 ## License
 

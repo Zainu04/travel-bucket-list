@@ -4,8 +4,8 @@
   "description": "Travel Bucket List Web App that provides users with a destination, estimated cost, best season, description and detailed page that includes must-dos, local food tips, and travel warnings.",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js"
-  },
+  "start": "node server/server.js"
+},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Zainu04/travel-bucket-list.git"

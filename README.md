@@ -1,11 +1,10 @@
-# travel-bucket-list
-# WEB103 Project 1 - *Travel Bucket List*
+# WEB103 Project 2 - Travel Bucket List
 
 Submitted by: **Zainab Akhtar**
 
-About this web app: **A travel bucket list web app that displays dream destinations around the world. Users can browse a grid of destinations, click on each one to view detailed information (including cost, best season, food, tips, and must-dos), and navigate using unique URL routes for each destination. The app is built using Node.js, Express, HTML, CSS, and JavaScript with a PicoCSS-styled frontend.**
+About this web app: **A travel bucket list web app that displays seven dream destinations around the world. Users can browse destination cards and click into each one to see detailed information including estimated cost, best season to visit, must-do activities, local food recommendations, and travel tips. Data is served from a PostgreSQL database hosted on Render.**
 
-Time spent: **4** hours
+Time spent: **2** hours
 
 ## Required Features
 
@@ -13,33 +12,26 @@ The following **required** functionality is completed:
 
 <!-- Make sure to check off completed functionality below -->
 - [x] **The web app uses only HTML, CSS, and JavaScript without a frontend framework**
-- [x] **The web app displays a title**
-- [x] **The web app displays at least five unique list items, each with at least three displayed attributes (such as title, text, and image)**
-- [x] **The user can click on each item in the list to see a detailed view of it, including all database fields**
-  - [x] **Each detail view should be a unique endpoint, such as as `http://localhost:3000/destinations/dubai-uae` and `http://localhost:3000/destinations/doha-qatar`**
-  - [x] *Note: When showing this feature in the video walkthrough, please show the unique URL for each detailed view. We will not be able to give points if we cannot see the implementation* 
-- [x] **The web app serves an appropriate 404 page when no matching route is defined**
-- [x] **The web app is styled using Picocss**
+- [x] **The web app is connected to a PostgreSQL database, with an appropriately structured database table for the list items**
+  - [x] **NOTE: Your walkthrough added to the README must include a view of your Render dashboard demonstrating that your Postgres database is available**
+  - [x] **NOTE: Your walkthrough added to the README must include a demonstration of your table contents. Use the psql command 'SELECT * FROM tablename;' to display your table contents.**
 
 The following **optional** features are implemented:
 
-- [x] The web app displays items in a unique format, such as cards rather than lists or animated list items
+- [x] The user can search for items by a specific attribute
 
 The following **additional** features are implemented:
 
-- [x] Custom travel-themed UI with hero section and card-based layout
-- [x] REST API endpoints (`/api/destinations` and `/api/destinations/:slug`)
-- [x] Dynamic routing using Express for each destination detail page
-- [x] Responsive design using PicoCSS and custom CSS styling
+- [ ] List anything else that you added to improve the site's functionality!
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented required features:
 
-<img src='images/Kapture 2026-06-07 at 00.28.04.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='images/travel.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
-GIF created with Kap
+GIF created with ...  GIF tool here
 <!-- Recommended tools:
 [Kap](https://getkap.co/) for macOS
 [ScreenToGif](https://www.screentogif.com/) for Windows
@@ -47,14 +39,12 @@ GIF created with Kap
 
 ## Notes
 
-One of the main challenges was setting up dynamic routing so each destination had its own unique URL and detail page. Another challenge was ensuring the frontend properly fetched data from the Express API and rendered it dynamically without page reload issues.
+The main challenge encountered was restructuring the project from Part 1 into separate client and server folders, and connecting the Express server to a remote PostgreSQL database hosted on Render. Updating the frontend JavaScript to use snake_case field names returned by the database instead of the camelCase names from the original data file also required careful attention.
 
 ## License
 
-Copyright [2026] Zainab Akhtar
+Copyright 2026 Zainab Akhtar
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 
-> http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+> http://www.apache.org/licenses/LICENSE-2.0  Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.

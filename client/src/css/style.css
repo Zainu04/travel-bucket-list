@@ -496,3 +496,38 @@ footer {
 ::-webkit-scrollbar-track { background: var(--navy); }
 ::-webkit-scrollbar-thumb { background: var(--navy-border); border-radius: 99px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+
+.search-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem 1rem;
+}
+
+.search-wrap input {
+  width: 100%;
+  padding: 0.85rem 1.4rem;
+  background: var(--navy-mid);
+  border: 1px solid var(--navy-border);
+  border-radius: var(--radius);
+  color: var(--cream);
+  font-family: 'Libre Baskerville', Georgia, serif;
+  font-size: 0.9rem;
+  outline: none;
+  transition: var(--transition);
+}
+
+.search-wrap input::placeholder {
+  color: var(--cream-muted);
+}
+
+.search-wrap input:focus {
+  border-color: var(--gold);
+}
+
+.no-results {
+  text-align: center;
+  color: var(--cream-muted);
+  font-style: italic;
+  padding: 4rem 0;
+  grid-column: 1 / -1;
+}

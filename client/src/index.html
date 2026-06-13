@@ -15,16 +15,22 @@
     </header>
 
     <main class="container">
-        <section class="hero">
-            <span class="hero-label">A Collection of Dreams</span>
-            <h1>The World is<br><em>Worth Seeing</em></h1>
-            <div class="divider"></div>
-            <p>Seven destinations that deserve a place on every traveler's list.</p>
-          </section>
+      <section class="hero">
+        <span class="hero-label">A Collection of Dreams</span>
+        <h1>The World is<br><em>Worth Seeing</em></h1>
+        <div class="divider"></div>
+        <p>Seven destinations that deserve a place on every traveler's list.</p>
+      </section>
 
-      <div id="destinations-grid" class="grid-container">
-        <!-- Cards injected by JS -->
+      <div class="search-wrap">
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Search by destination or category..."
+        />
       </div>
+
+      <div id="destinations-grid" class="grid-container"></div>
     </main>
 
     <footer class="container">
@@ -32,11 +38,21 @@
     </footer>
 
     <script>
+      let allDestinations = [];
+
       async function loadDestinations() {
         const res = await fetch('/api/destinations');
-        const destinations = await res.json();
+        allDestinations = await res.json();
+        renderCards(allDestinations);
+      }
 
+      function renderCards(destinations) {
         const grid = document.getElementById('destinations-grid');
+
+        if (destinations.length === 0) {
+          grid.innerHTML = '<p class="no-results">No destinations found. Try a different search.</p>';
+          return;
+        }
 
         grid.innerHTML = destinations.map((dest, index) => `
           <a href="/destinations/${dest.slug}" class="card">
@@ -49,14 +65,24 @@
               <h2>${dest.name}</h2>
               <p class="description">${dest.description.substring(0, 120)}...</p>
               <div class="card-footer">
-                <span class="cost">${dest.estimatedCost}</span>
-                <span class="season">${dest.bestSeason}</span>
+                <span class="cost">${dest.estimated_cost}</span>
+                <span class="season">${dest.best_season}</span>
               </div>
               <span class="card-cta">Explore destination &rarr;</span>
             </div>
           </a>
         `).join('');
       }
+
+      document.getElementById('search-input').addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase();
+        const filtered = allDestinations.filter(dest =>
+          dest.name.toLowerCase().includes(query) ||
+          dest.category.toLowerCase().includes(query) ||
+          dest.country.toLowerCase().includes(query)
+        );
+        renderCards(filtered);
+      });
 
       loadDestinations();
     </script>

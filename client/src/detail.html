@@ -10,15 +10,13 @@
   <body>
     <header>
       <nav class="container">
-        <a href="/">← Back to Bucket List</a>
+        <a href="/">Back to Bucket List</a>
         <strong>Travel Bucket List</strong>
       </nav>
     </header>
 
     <main class="container">
-      <div id="destination-detail">
-        <!-- Injected by JS -->
-      </div>
+      <div id="destination-detail"></div>
     </main>
 
     <footer class="container">
@@ -36,7 +34,6 @@
         }
 
         const dest = await res.json();
-
         document.title = `${dest.name} | Travel Bucket List`;
 
         const detail = document.getElementById('destination-detail');
@@ -44,51 +41,45 @@
           <div class="detail-hero">
             <img src="${dest.image}" alt="${dest.name}" class="detail-image" />
           </div>
-
           <div class="detail-content">
             <div class="detail-header">
+              <span class="detail-label">${dest.category}</span>
               <h1>${dest.name}</h1>
               <span class="badge">${dest.category}</span>
             </div>
-
-            <div class="detail-meta grid">
+            <div class="detail-meta">
               <div class="meta-card">
-                <p>🌍 Country</p>
+                <p>Country</p>
                 <strong>${dest.country}</strong>
               </div>
               <div class="meta-card">
-                <p>💰 Estimated Cost</p>
-                <strong>${dest.estimatedCost}</strong>
+                <p>Estimated Cost</p>
+                <strong>${dest.estimated_cost}</strong>
               </div>
               <div class="meta-card">
-                <p>🗓 Best Season</p>
-                <strong>${dest.bestSeason}</strong>
+                <p>Best Season</p>
+                <strong>${dest.best_season}</strong>
               </div>
             </div>
-
             <section>
               <h2>About</h2>
               <p>${dest.description}</p>
             </section>
-
             <section>
               <h2>Must Dos</h2>
-              <p>${dest.mustDos}</p>
+              <p>${dest.must_dos}</p>
             </section>
-
             <section>
               <h2>Local Food</h2>
-              <p>${dest.localFood}</p>
+              <p>${dest.local_food}</p>
             </section>
-
             <section>
               <h2>Travel Tip</h2>
-              <blockquote>${dest.travelTip}</blockquote>
+              <blockquote>${dest.travel_tip}</blockquote>
             </section>
           </div>
         `;
       }
-
       loadDestination();
     </script>
   </body>

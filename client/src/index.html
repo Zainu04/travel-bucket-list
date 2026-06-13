@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel Bucket List</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="container">
+        <strong>Travel Bucket List</strong>
+      </nav>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <span class="hero-label">A Collection of Dreams</span>
+            <h1>The World is<br><em>Worth Seeing</em></h1>
+            <div class="divider"></div>
+            <p>Seven destinations that deserve a place on every traveler's list.</p>
+          </section>
+
+      <div id="destinations-grid" class="grid-container">
+        <!-- Cards injected by JS -->
+      </div>
+    </main>
+
+    <footer class="container">
+      <p>Made by Zainab 2026</p>
+    </footer>
+
+    <script>
+      async function loadDestinations() {
+        const res = await fetch('/api/destinations');
+        const destinations = await res.json();
+
+        const grid = document.getElementById('destinations-grid');
+
+        grid.innerHTML = destinations.map((dest, index) => `
+          <a href="/destinations/${dest.slug}" class="card">
+            <div class="card-image-wrap">
+              <img src="${dest.image}" alt="${dest.name}" />
+              <span class="card-number">0${index + 1}</span>
+            </div>
+            <div class="card-body">
+              <p class="category">${dest.category} &middot; ${dest.country}</p>
+              <h2>${dest.name}</h2>
+              <p class="description">${dest.description.substring(0, 120)}...</p>
+              <div class="card-footer">
+                <span class="cost">${dest.estimatedCost}</span>
+                <span class="season">${dest.bestSeason}</span>
+              </div>
+              <span class="card-cta">Explore destination &rarr;</span>
+            </div>
+          </a>
+        `).join('');
+      }
+
+      loadDestinations();
+    </script>
+  </body>
+</html>
